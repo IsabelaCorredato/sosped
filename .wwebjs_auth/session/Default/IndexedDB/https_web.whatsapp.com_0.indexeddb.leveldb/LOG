@@ -1,0 +1,48 @@
+2025/04/09-20:36:49.594 a6b0 Creating DB C:\Users\klebe\comunidadezdg\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2025/04/09-20:36:49.601 a6b0 Reusing MANIFEST C:\Users\klebe\comunidadezdg\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/04/09-20:36:49.601 a6b0 Recovering log #2231
+2025/04/09-20:36:49.601 a6b0 Reusing old log C:\Users\klebe\comunidadezdg\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/002231.log 
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1216
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1217
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1218
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1219
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1220
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1222
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1224
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1287
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1289
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1291
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1292
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1293
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1295
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1296
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #1298
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2166
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2167
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2186
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2187
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2188
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2189
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2190
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2192
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2193
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2194
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2195
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2196
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2197
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2198
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2199
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2200
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2201
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2202
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2203
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2206
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2222
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2225
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2226
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2227
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2228
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2230
+2025/04/09-20:36:49.601 a6b0 Delete type=2 #2232
+2025/04/09-20:37:21.562 4310 Level-0 table #2233: started
+2025/04/09-20:37:21.564 4310 Level-0 table #2233: 6709 bytes OK
