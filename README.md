@@ -72,6 +72,11 @@ chatbot-voz-emergencia/
 - Reconhecimento de múltiplos idiomas
 - Interface mobile PWA
 
+## LINKS IMPORTANTES!!
+
+- Checklist com cenários dos testes: https://docs.google.com/spreadsheets/d/1WwzZr31JjmKgVZNMJAkDpJzn7nut6vkb/edit?usp=sharing&ouid=103300693782475333321&rtpof=true&sd=true
+- Diagrama de Gaunt: https://docs.google.com/spreadsheets/d/1gUH-LvxS78DxGOKtMzlDrbCFi8s395-fL3yIq-cyLKw/edit?usp=sharing
+
 ## 📄 Licença
 
 Este projeto está licenciado sob os termos da [MIT License](LICENSE).
