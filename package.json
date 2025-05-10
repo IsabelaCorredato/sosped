@@ -1,8 +1,17 @@
 {
+<<<<<<< HEAD
+  "name": "projeto-ia",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+=======
   "name": "comunidadezdg",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+>>>>>>> 96ea602a628d4b98c134d5a7709c6cf30454953d
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -10,8 +19,19 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+<<<<<<< HEAD
+    "axios": "^1.9.0",
+    "chalk": "^4.1.2",
+    "puppeteer": "^24.8.2",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.27.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+=======
     "axios": "^1.8.4",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.27.0"
+>>>>>>> 96ea602a628d4b98c134d5a7709c6cf30454953d
   }
 }

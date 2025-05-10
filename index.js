@@ -1,6 +1,167 @@
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const axios = require('axios');
+<<<<<<< HEAD
+const handleAudio = require('./handlers/messageAudio');
+const handleVisualMedia = require('./handlers/messageVisualMedia');
+const handleFile = require('./handlers/messageFile');
+const handleSticker = require('./handlers/messageSticker');
+const handlePoll = require('./handlers/messagePoll');
+const handleContact = require('./handlers/messageContact');
+const handleOthers = require('./handlers/messageOthers');
+const handleLocation = require('./handlers/messageLocation');
+
+const log = require('./utils/logger');
+const { executablePath } = require('puppeteer');
+
+const filaMensagens = [];
+let processando = false;
+
+function adicionarNaFila(message, tipo) {
+    filaMensagens.push({ message, tipo });
+    console.log(`🟡 Adicionado na fila (${tipo}). Total na fila: ${filaMensagens.length}`);
+    processarFila();
+}
+
+async function processarFila() {
+    if (processando || filaMensagens.length === 0) {
+        return;
+    }
+
+    processando = true;
+    const { message, tipo } = filaMensagens.shift();
+    console.log(`🟢 Processando ${tipo} de ${message.from}`);
+
+    if (tipo === 'text') {
+        await processarMensagemDeTexto(message);
+    } else if (tipo === 'audio-transcribe') {
+        await processarMensagemDeAudio(message);
+    }
+
+    processando = false;
+    processarFila();
+}
+
+async function processarMensagemDeTexto(message) {
+    try {
+        const prompt = message.body;
+        console.log(`💬 Enviando para IA: ${prompt}`);
+
+        const res = await axios.post('http://localhost:5000/chat', {
+            message: prompt
+        });
+
+        const respostaIA = res.data.response;
+        console.log(`🤖 Resposta da IA: ${respostaIA}`);
+
+        await message.reply(respostaIA);
+    } catch (err) {
+        console.error('❌ Erro ao consultar IA:', err.message);
+        await message.reply("Ocorreu um erro ao consultar a IA.");
+    }
+}
+
+async function processarMensagemDeAudio(message) {
+    try {
+        // 1️⃣ Baixa o áudio normalmente
+        const audioPath = await handleAudio(message); // já salva o arquivo na pasta correta
+
+        if (!audioPath) {
+            console.error('❌ Não foi possível obter o caminho do áudio.');
+            return;
+        }
+
+        console.log(`🎧 Áudio salvo em: ${audioPath}`);
+
+        // 2️⃣ Envia o áudio para o Whisper API para transcrição
+        console.log('🌀 Enviando áudio para transcrição...');
+
+        const resWhisper = await axios.post('http://localhost:5001/transcribe', {
+            audio_path: audioPath
+        });
+
+        const transcricao = resWhisper.data.transcription;
+        console.log(`📝 Transcrição:\n${transcricao}`);
+
+        // 3️⃣ Envia a transcrição para a IA
+        const resIA = await axios.post('http://localhost:5000/chat', {
+            message: transcricao
+        });
+
+        const respostaIA = resIA.data.response;
+        console.log(`🤖 Resposta da IA: ${respostaIA}`);
+
+        await message.reply(respostaIA);
+    } catch (err) {
+        console.error('❌ Erro ao processar áudio:', err.message);
+        await message.reply("Ocorreu um erro ao transcrever ou consultar a IA.");
+    }
+}
+
+console.log('🚀 Iniciando bot...');
+
+const client = new Client({
+    authStrategy: new LocalAuth(),
+    puppeteer: {
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        executablePath: executablePath()
+    }
+});
+
+client.on('qr', (qr) => {
+    qrcode.generate(qr, { small: true });
+    log.info('📱 Escaneie o QR Code para conectar');
+});
+
+client.on('ready', () => {
+    log.success('🤖 Bot conectado com sucesso!');
+});
+
+client.on('message', async (message) => {
+    const { from, type, timestamp, body } = message;
+
+    if (from === 'status@broadcast') return; // Ignorar status ✅
+
+    const contact = await message.getContact();
+    const numeroDesejado = '5514996812051'; // 👈 Substitua pelo número que quer monitorar
+
+    if (contact.number !== numeroDesejado) {
+        return; // Ignora mensagens de outros contatos
+    }
+
+    const dataHora = new Date(timestamp * 1000).toLocaleString('pt-BR');
+    const nome = contact.pushname || contact.name || contact.number || 'Desconhecido';
+    const contatoFormatado = `${nome} (${from})`;
+    const isGroup = from.endsWith('@g.us');
+    const source = isGroup ? '📢 Grupo' : '👤 Privado';
+    const texto = body?.trim() || '(sem texto)';
+
+    log.info(`${source} | ${contatoFormatado} | ${dataHora}`);
+    log.info(`📦 Tipo: ${type}`);
+
+    if (type === 'chat') {
+        adicionarNaFila(message, 'text');
+    } else if (type === 'ptt' || type === 'audio') {
+        adicionarNaFila(message, 'audio-transcribe');
+    } else if (type === 'image' || type === 'video') {
+        await handleVisualMedia(message);
+    } else if (type === 'document') {
+        await handleFile(message);
+    } else if (type === 'sticker') {
+        await handleSticker(message);
+    } else if (type === 'poll') {
+        await handlePoll(message);
+    } else if (type === 'vcard' || type === 'multi_vcard') {
+        await handleContact(message);
+    } else if (type === 'location') {  // ✅ Novo handler adicionado aqui!
+        await handleLocation(message);
+    } else {
+        await handleOthers(message);
+    }
+});
+
+=======
 
 // Objeto para armazenar o histórico de conversas
 const conversationHistory = {};
@@ -115,4 +276,5 @@ client.on('message', async (message) => {
 });
 
 // Inicializa o cliente
+>>>>>>> 96ea602a628d4b98c134d5a7709c6cf30454953d
 client.initialize();
