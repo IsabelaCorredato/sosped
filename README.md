@@ -58,9 +58,11 @@ Acesse [http://localhost:3000](http://localhost:3000) para iniciar a chamada com
 ```
 chatbot-voz-emergencia/
 ├── public/
-│   └── script.js       # Captura e síntese de voz
-├── chatbot.js          # Lógica de classificação da emergência
-├── index.js            # Servidor Node.js com API
+│   └── whisper_runner.py       # Captura e síntese de voz
+├── ia.py          # chama e conecta a IA
+├── llama           # Modelo de ia utilizado
+├── Handler         # Faz a organização entre os arquivos gerados
+├── index.js            # Conexão com whatsapp
 └── package.json
 ```
 
