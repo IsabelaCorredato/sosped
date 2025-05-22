@@ -34,8 +34,8 @@ Oferecer um atendimento emergencial por voz, onde o chatbot classifica o tipo de
 
 ```bash
 # Clone o projeto
-git clone https://github.com/seu-usuario/chatbot-voz-emergencia.git
-cd chatbot-voz-emergencia
+git https://github.com/IsabelaCorredato/sosped.git
+cd https://github.com/IsabelaCorredato/sosped.git
 
 # Instale as dependências
 npm install
