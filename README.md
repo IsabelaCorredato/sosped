@@ -27,20 +27,76 @@ Oferecer um atendimento emergencial por voz, onde o chatbot classifica o tipo de
 
 ### Pré-requisitos
 
-- [Node.js](https://nodejs.org/) instalado
-- Navegador compatível com Web Speech API (Chrome recomendado)
+# 🆘 S.O.S. Ped — Projeto de Assistente Inteligente via WhatsApp
 
-### Passos
+Este projeto é um sistema completo que integra um chatbot no WhatsApp com uma IA local (Llama) e transcrição de áudio (Whisper), além de funcionalidades de geolocalização para emergências e suporte rápido.
 
-```bash
-# Clone o projeto
-git https://github.com/IsabelaCorredato/sosped.git
-cd https://github.com/IsabelaCorredato/sosped.git
+---
 
-# Instale as dependências
+## 🚀 Funcionalidades
+- 🤖 Chatbot no WhatsApp com IA local (Llama 3.2 gguf)
+- 🎧 Transcrição automática de áudios (Whisper)
+- 📍 Geolocalização: localiza hospitais e pontos de atendimento próximos
+- 💬 Atendimento inteligente para suporte médico emergencial e primeiros socorros
+
+---
+
+## 🧠 Tecnologias Usadas
+- Python 3.13 ➝ API da IA (Llama)
+- Python 3.11 ➝ Transcrição de áudio (Whisper)
+- Node.js ➝ Bot WhatsApp
+- Flask ➝ API REST
+- whatsapp-web.js ➝ Integração com WhatsApp Web
+- Geoapify API ➝ Localização de hospitais
+
+---
+
+## ⚙️ Dependências
+
+### Python 3.13 (IA)
+```
+pip install flask llama-cpp-python
+```
+
+### Python 3.11 (Whisper)
+1. Crie o ambiente virtual:
+```
+python -m venv venv-whisper
+.env-whisper\Scriptsctivate
+```
+
+2. Instale os pacotes:
+```
+pip install openai-whisper torch flask
+```
+
+### Node.js (Bot WhatsApp)
+```
 npm install
+```
 
-# Inicie o servidor
+---
+
+## 🔥 Ordem de Execução
+
+### 1️⃣ Inicie o Whisper
+```
+cd Projeto ia
+.env-whisper\Scriptsctivate
+python whisper_runner.py
+```
+
+### 2️⃣ Inicie a IA (Llama)
+```
+python ia.py
+```
+
+### 3️⃣ Inicie o Bot WhatsApp
+```
+npx nodemon index.js
+```
+ou
+```
 node index.js
 ```
 
