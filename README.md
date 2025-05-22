@@ -15,6 +15,29 @@ Oferecer um atendimento emergencial por voz, onde o chatbot classifica o tipo de
 - **SpeechSynthesis API** — Voz gerada pelo bot.
 - **DeepSeek Lnstudio** — Ambiente de desenvolvimento e IA.
 
+📦 Dependências
+Certifique-se de ter as seguintes versões do Python instaladas:
+- **Python 3.13** – usado para o ambiente principal
+- **Python 3.11** – necessário exclusivamente para o Whisper
+- 
+Instalação de dependências
+Cada versão do Python deve ter seus próprios pacotes instalados. Faça o pip install separadamente para cada ambiente:
+# No ambiente Python 3.13
+pip install -r requirements.txt
+# No ambiente Python 3.11 (apenas para o Whisper)
+pip install -r whisper-requirements.txt
+💡 Recomenda-se criar ambientes virtuais separados para evitar conflitos entre as dependências.
+
+🧠 Observação sobre o Whisper
+O Whisper precisa rodar em um ambiente com Python 3.11. Você pode:
+Criar um ambiente virtual com Python 3.11 só para o Whisper, ou
+Abrir um terminal/VS Code separado com essa versão ativa.
+
+▶️ Ordem de Execução
+Whisper – processa os dados de entrada.
+IA – roda os modelos principais de inferência.
+Index – organiza e exibe os resultados finais.
+
 ## 🧠 Como Funciona
 
 1. O usuário clica em **"Iniciar Chamada"**.
