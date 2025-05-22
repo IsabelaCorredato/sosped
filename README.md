@@ -82,7 +82,7 @@ npm install
 ### 1️⃣ Inicie o Whisper
 ```
 cd Projeto ia
-.env-whisper\Scriptsctivate
+.\venv-whisper\Scripts\activate
 python whisper_runner.py
 ```
 
