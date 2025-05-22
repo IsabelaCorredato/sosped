@@ -62,7 +62,7 @@ pip install flask llama-cpp-python
 1. Crie o ambiente virtual:
 ```
 python -m venv venv-whisper
-.env-whisper\Scriptsctivate
+./venv-whisper/Scripts/activate
 ```
 
 2. Instale os pacotes:
@@ -82,7 +82,7 @@ npm install
 ### 1️⃣ Inicie o Whisper
 ```
 cd Projeto ia
-.\venv-whisper\Scripts\activate
+./venv-whisper/Scripts/activate
 python whisper_runner.py
 ```
 
