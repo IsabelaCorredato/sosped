@@ -58,7 +58,6 @@ Acesse [http://localhost:3000](http://localhost:3000) para iniciar a chamada com
 ```
 chatbot-voz-emergencia/
 ├── public/
-│   ├── index.html      # Interface com botão de chamada
 │   └── script.js       # Captura e síntese de voz
 ├── chatbot.js          # Lógica de classificação da emergência
 ├── index.js            # Servidor Node.js com API
