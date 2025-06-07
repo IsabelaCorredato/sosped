@@ -156,6 +156,7 @@ chatbot-voz-emergencia/
 
 - Checklist com cenários dos testes: https://docs.google.com/spreadsheets/d/1WwzZr31JjmKgVZNMJAkDpJzn7nut6vkb/edit?usp=sharing&ouid=103300693782475333321&rtpof=true&sd=true
 - Diagrama de Gantt: https://docs.google.com/spreadsheets/d/1gUH-LvxS78DxGOKtMzlDrbCFi8s395-fL3yIq-cyLKw/edit?usp=sharing
+- Video explicativo: https://www.youtube.com/watch?v=99EUGv8MoKY
 
 ## 📄 Licença
 
